@@ -38,22 +38,23 @@ document.querySelector("#slider").addEventListener("click", function() {
 document.querySelector("#mute").addEventListener("click", function() {
 
 	if(video.muted == false) {
-		console.log("Mute Video");
 		video.muted = true;
 		document.querySelector("#mute").innerHTML="Unmute" }
 	
 	else {
 	video.muted = false;
-	document.querySelector("#mute").innerHTML="Mute"
-	console.log("Unmute Video")}
+	document.querySelector("#mute").innerHTML="Mute"}
 });
 
 document.querySelector("#skip").addEventListener("click", function() {
 	if(video.ended == false) {
-		console.log("Skip Ahead");
-		video.currentTime += 15;}
+		console.log("Original location "+video.currentTime)
+		video.currentTime += 15;
+		console.log("New location "+video.currentTime)}
 	else {
+		console.log("Original location "+video.currentTime)
 		video.currentTime = 0
+		console.log("New location "+video.currentTime)
 		video.play()}
 });
 
